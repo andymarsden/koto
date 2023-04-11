@@ -39,3 +39,10 @@ FROM            (SELECT        TOP (100) PERCENT dbo.adults_staging_services.per
                           WHERE        (dbo.adults_staging_services.person_id = 3348198)
                           ORDER BY Expr2) AS derivedtbl_1
 GROUP BY care_package_id, Expr1, care_package_start_date, service_type``
+
+
+
+#### Simon Tasks
+- Run Services and reviews
+- Services > Does leaving res care and goign back in count as 2?
+- Do we need to focus on PERMANENT?
