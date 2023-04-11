@@ -40,7 +40,7 @@ FROM            (SELECT        TOP (100) PERCENT dbo.adults_staging_services.per
                           ORDER BY Expr2) AS derivedtbl_1
 GROUP BY care_package_id, Expr1, care_package_start_date, service_type``
 
-
+ADD SERVICE STATUS.
 
 #### Simon Tasks
 - Run Services and reviews
