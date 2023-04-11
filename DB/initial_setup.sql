@@ -12,13 +12,7 @@ CREATE TABLE [dbo].[events_adult_needs_assessments](
 	[assigned_worker_id] [numeric](9, 0) NULL,
 	[working_days_between_proposed_and_completed] [int] NULL,
 	[pi_within_28_working_days] [int] NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[events_all]    Script Date: 11/04/2023 13:25:29 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
+) 
 CREATE TABLE [dbo].[events_all](
 	[root_step_id] [numeric](9, 0) NULL,
 	[workflow_step_id] [numeric](9, 0) NULL,
@@ -48,13 +42,7 @@ CREATE TABLE [dbo].[events_all](
 	[working_days_proposed_to_completed] [int] NULL,
 	[working_days_root_started_to_current_completed] [int] NULL,
 	[working_days_root_proposed_to_current_completed] [int] NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[form_needs_assessments]    Script Date: 11/04/2023 13:25:29 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
+) 
 CREATE TABLE [dbo].[form_needs_assessments](
 	[workflow_step_id] [numeric](9, 0) NULL,
 	[form_id] [numeric](9, 0) NULL,
@@ -247,13 +235,7 @@ CREATE TABLE [dbo].[form_needs_assessments](
 	[technologyConversationCurrentlyUsed] [varchar](4000) NULL,
 	[technologyConversationAdditionalUsage] [varchar](4000) NULL,
 	[technologyConversationUsage] [varchar](4000) NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[km_conversations_to_assessments]    Script Date: 11/04/2023 13:25:29 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
+) 
 CREATE TABLE [dbo].[km_conversations_to_assessments](
 	[root_step_id] [numeric](9, 0) NULL,
 	[conversation_step_id] [numeric](9, 0) NULL,
@@ -265,13 +247,7 @@ CREATE TABLE [dbo].[km_conversations_to_assessments](
 	[assessment_started_date] [datetime] NULL,
 	[assessment_status] [varchar](16) NULL,
 	[assessment_type] [varchar](100) NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[people]    Script Date: 11/04/2023 13:25:29 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
+) 
 CREATE TABLE [dbo].[people](
 	[PERSON_ID] [numeric](16, 0) NULL,
 	[SSDA903_ID] [varchar](10) NULL,
@@ -340,9 +316,18 @@ CREATE TABLE [dbo].[people](
 	[European Electoral Region Name] [varchar](500) NULL,
 	[Primary Care Trust Code] [varchar](500) NULL,
 	[Primary Care Trust Name] [varchar](500) NULL
-) ON [PRIMARY]
-GO
-USE [master]
-GO
-ALTER DATABASE [LPFT] SET  READ_WRITE 
-GO
+) 
+
+CREATE TABLE [dbo].[services](
+	[person_id] [numeric](16, 0) NULL,
+	[care_package_start_date] [datetime] NULL,
+	[service_type] [varchar](100) NULL,
+	[package_type_id] [varchar](50) NULL,
+	[service_id] [numeric](9, 0) NULL,
+	[service_start_date] [datetime] NULL,
+	[service_end_date] [datetime] NULL,
+	[care_package_id] [numeric](9, 0) NULL,
+	[SERVICE_RANKING] [nvarchar](255) NULL
+) 
+
+
